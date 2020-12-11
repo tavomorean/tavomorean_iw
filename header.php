@@ -26,7 +26,9 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tavomorean_iw' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<div class="container">
 		<div class="site-branding">
+			<img class="hardright_brand" src="<?php echo get_template_directory_uri(); ?>/assets/img/hardright-brand.svg"> 
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -56,4 +58,19 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
+<script>
+	$(window).scroll(function() {
+
+//After scrolling 100px from the top...
+if ( $(window).scrollTop() >= 100 ) {
+		$('header.site-header').css('background-color', 'rgba(0,0,0,0.65');
+
+//Otherwise remove inline styles and thereby revert to original stying
+} else {
+		$('header.site-header').attr('style', '');
+
+}
+});
+</script>
