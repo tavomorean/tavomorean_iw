@@ -18,6 +18,8 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,6 +31,7 @@
 		<div class="container">
 		<div class="site-branding">
 			<img class="hardright_brand" src="<?php echo get_template_directory_uri(); ?>/assets/img/hardright-brand.svg"> 
+			<img class="hardright_brand-scrolled" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_Fixed-Header.svg"> 
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -48,7 +51,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tavomorean_iw' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 6H19.5V7.5H4.5V6ZM4.5 12H19.5V13.5H4.5V12ZM19.5 18H4.5V19.5H19.5V18Z" fill="currentColor"></path></svg></button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -61,15 +64,15 @@
 		</div>
 	</header><!-- #masthead -->
 <script>
-	$(window).scroll(function() {
+	jQuery(window).scroll(function() {
 
 //After scrolling 100px from the top...
-if ( $(window).scrollTop() >= 100 ) {
-		$('header.site-header').css('background-color', 'rgba(0,0,0,0.65');
+if ( jQuery(window).scrollTop() >= 50 ) {
+		jQuery('header.site-header').addClass('scrolled-page');
 
 //Otherwise remove inline styles and thereby revert to original stying
 } else {
-		$('header.site-header').attr('style', '');
+	jQuery('header.site-header').removeClass('scrolled-page');
 
 }
 });

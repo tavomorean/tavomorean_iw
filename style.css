@@ -73,95 +73,95 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 45 Book'), url('assets/fonts/AvenirLTProBook.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 45 Book Oblique';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 45 Book Oblique'), url('assets/fonts/AvenirLTProBookOblique.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 55 Roman';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 55 Roman'), url('assets/fonts/AvenirLTProRoman.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 55 Oblique';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 55 Oblique'), url('assets/fonts/AvenirLTProOblique.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 35 Light';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 35 Light'), url('assets/fonts/AvenirLTProLight.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 35 Light Oblique';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 35 Light Oblique'), url('assets/fonts/AvenirLTProLightOblique.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 65 Medium';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 65 Medium'), url('assets/fonts/AvenirLTProMedium.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 65 Medium Oblique';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 65 Medium Oblique'), url('assets/fonts/AvenirLTProMediumOblique.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 85 Heavy';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 85 Heavy'), url('assets/fonts/AvenirLTProHeavy.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 85 Heavy Oblique';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 85 Heavy Oblique'), url('assets/fonts/AvenirLTProHeavyOblique.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 95 Black';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 95 Black'), url('assets/fonts/AvenirLTProBlack.woff') format('woff');
-	}
-	
-	
-	@font-face {
+}
+
+@font-face {
 	font-family: 'Avenir LT Pro 95 Black Oblique';
 	font-style: normal;
 	font-weight: normal;
 	src: local('Avenir LT Pro 95 Black Oblique'), url('assets/fonts/AvenirLTProBlackOblique.woff') format('woff');
-	}
+}
+/*---- FONTS ---*/
+
+:root{
+	/*---- COLORS ---*/
+		--blue_primary: #6161E8;
+		--dark_blue: #324063;
+}	
+
+:hover {
+	transition: all 0.23s;
+}
 
 html {
 	line-height: 1.15;
@@ -1065,14 +1065,24 @@ textarea {
 	margin-bottom: 1.5em;
 }
 
+/*--- begin custom ---*/
+
 /*--- header ----*/
-header.site-header {
+/* header.site-header {
 	background: transparent;
-	padding: 10px 20px;
+	padding: 0px 20px;
 	position: -webkit-sticky;
   position: sticky;
 	top: 0;
 	z-index: 9;
+} */
+header.site-header {
+	background: transparent;
+	padding: 10px 20px;
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	width: 100%;
 }
 
 header.site-header .container {
@@ -1081,18 +1091,19 @@ header.site-header .container {
 	align-items: center;
 	max-width: 1260px;
 	margin: 0 auto;
+	padding: 10px 0;
 }
 
 header .site-branding {
 	width: 30%;
 	display: inherit;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
 header .main-navigation {
 	width: 70%;
 	display: inherit;
-	justify-content: center;
+	justify-content: flex-end;
 }
 
 
@@ -1108,12 +1119,49 @@ ul#primary-menu li a {
 	color: white;
 }
 
+.get_started:hover {
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	color: #324063 !important;
+	background-color: white;
+}
+
+.get_started:hover a {
+	color: #324063 !important;
+	background-color: white;
+}
+
+header.site-header.scrolled-page {
+	background-color: white;
+}
+
+header.site-header.scrolled-page .main-navigation .menu-item:not(.get_started) a {
+	color: #324063 !important;
+}
+
+html header.site-header.scrolled-page .get_starterd a {
+	border: 1px solid #6161e8 !important;
+	color: #6161e8 !important;
+}
+
+img.hardright_brand-scrolled {
+	display: none;
+}
+
+header.site-header.scrolled-page img.hardright_brand-scrolled {
+	display: block;
+}
+
+header.site-header.scrolled-page img.hardright_brand {
+	display: none;
+}
+
 /*---- homepage ----*/
 .site-title, .site-description {
 	display: none;
 }
 
-div#home-banner {
+/* div#home-banner {
 	background-image: url("assets/img/home_banner.jpg");
 	background-size: cover;
 	background-position: center;
@@ -1122,8 +1170,12 @@ div#home-banner {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 100px;
-	min-height: 480px;
+	min-height: 680px;
 	margin-top: -70px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 div#home-banner:before {
@@ -1134,4 +1186,79 @@ div#home-banner:before {
 	position: absolute;
 	top: 0;
 	left: 0;
+} */
+
+h1.hero_title {
+	font-size: 60px;
+	line-height: 62px;
+	color: white;
+	font-weight: 400;
+	z-index: 1;
+	max-width: 480px;
+	margin-bottom: 8px;
+}
+
+p.banner-top-txt {
+	max-width: 480px;
+	color: white;
+	z-index: 1;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+h1.hero_title span.blueTxt {
+	color: var(--blue_primary);
+}
+
+header.entry-header {
+	display: none;
+}
+
+/*---- CUSTOM ---*/
+.topbanners {
+	background-image: url(https://hardright.artesantocook.com/wp-content/themes/tavomorean_iw/assets/img/home_banner.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+	margin: 0 auto;
+	padding: 120px 0;
+	min-height: 620px;
+	margin-top: -70px;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.topbanners:before {
+	content: "";
+	background-color: rgba(0,0,0,0.63);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.banner_info_home {
+	width: 1260px;
+	max-width: 1260px;
+	margin: 0 auto;
+	padding: 30px 0;
+	z-index: 1;
+}
+
+.primary-btns a {
+	background: #6161e8;
+	border-radius: 6px;
+	box-shadow: none;
+	border: 0px;
+	width: 205px;
+	font-size: 18px;
+}
+
+.primary-btns a:hover {
+	background: #3F51B5;
 }

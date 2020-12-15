@@ -12,10 +12,12 @@ get_header();
 
 
 	<main id="primary" class="site-main">
+		<!-- <div id="home-banner" class="home_banner">
+			<div class="container">
+				<h1 class="hero_title"><span class="blueTxt">HR software</span><br>that really matters</h1>
+			</div>
+		</div>  --><!-- END BANNER SECTION -->
 
-  <div id="home-banner" class="home_banner">
- banner                                                                                                                                                     
-</div>
 
 		<?php
 		while ( have_posts() ) :
@@ -34,5 +36,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
