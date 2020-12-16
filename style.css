@@ -1262,3 +1262,25 @@ header.entry-header {
 .primary-btns a:hover {
 	background: #3F51B5;
 }
+
+.get_ahead_container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	position: relative;
+}
+
+.get_ahead-right_box {
+	width: 40%;
+	padding: 4% 8% 8% 8%;
+}
+
+.get_ahead-left_box {
+	margin-top: -60px;
+	width: 40%;
+}
+
+h2.get_ahead-title {
+	font-size: 40px;
+	line-height: 45px;
+}
