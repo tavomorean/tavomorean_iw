@@ -47,10 +47,67 @@ get_header();
 		</div>
 	</div>
 
-	<div id="based_on_data">
-	
+	<div id="based_on_data-wrap">
+		<div class="based_data-title"><h2>Based on data from:</h2>
+		<div id="based_on_data">
+		<div class="based_data-item_box">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/tickets.svg"/>
+			<div class="based_data-info_box">
+				<h2 class="based_data-title"><?php echo get_post_meta( get_the_ID(), 'based_data_tickets', true );?></h2>
+				<p class="based_data-type">Tickets</p>
+			</div>
+		</div>
+		<div class="based_data-item_box">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/customers.svg"/>
+			<div class="based_data-info_box">
+				<h2 class="based_data-title"><?php echo get_post_meta( get_the_ID(), 'based_data_customers', true );?></h2>
+				<p class="based_data-type">Customers</p>
+			</div>
+		</div>
+		<div class="based_data-item_box">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/agents.svg"/>
+			<div class="based_data-info_box">
+				<h2 class="based_data-title"><?php echo get_post_meta( get_the_ID(), 'based_data_agents', true );?></h2>
+				<p class="based_data-type">Agents</p>
+			</div>
+		</div>
+		<div class="based_data-item_box">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/customers-tools.svg"/>
+			<div class="based_data-info_box">
+				<h2 class="based_data-title"><?php echo get_post_meta( get_the_ID(), 'based_data_customers_tools', true );?></h2>
+				<p class="based_data-type">Customers</p>
+			</div>
+		</div>
+		</div>
+		</div>
 	</div>
 
+	<div id="see_where-stand" class="see_where-stand">
+		<div class="sw-container">
+			<h2><?php echo get_post_meta( get_the_ID(), 'sw_head-title', true );?></h2>
+			<p><?php echo get_post_meta( get_the_ID(), 'sw_head-paragraph', true );?></p>
+			<form id="sw_filter">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_Select_Industry.svg"/>	
+				<select name="industry-filter" id="industry_filter">
+					<option disabled selected>Select</option>
+					<option value="Agencies">Agencies</option>
+					<option value="Gastronomy">Gastronomy</option>
+					<option value="House">House</option>
+				</select>
+			</form>
+		</div>
+	</div>
+
+	<div id="research-section">
+		<div class="rs-container">
+			<h2><?php echo get_post_meta( get_the_ID(), 'rs_head-title', true );?></h2>
+			<p><?php echo get_post_meta( get_the_ID(), 'rs_head-paragraph', true );?></p>
+
+			<div class="rs-feed">
+			</div>
+		</div>
+
+	</div>
 
 	</main><!-- #main -->
 
