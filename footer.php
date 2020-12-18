@@ -16,16 +16,20 @@
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 	
 	<div id="map" style="width:100%; height:806px"></div>
-	
+
 	<script>
+/*
+	<span class="latt">< ?php echo get_post_meta( get_the_ID(), 'latitud_map', true );?></span>
+		<span class="long">< ?php echo get_post_meta( get_the_ID(), 'longitud_map', true );?></span>
+*/
 		var mapOptions = {
-				center: [11.001203750235218, -74.82311189174654],
+				center:  [<?php echo get_post_meta( get_the_ID(), 'latitud_map', true );?>, <?php echo get_post_meta( get_the_ID(), 'longitud_map', true );?>],
 				zoom: 16
 		}
 		var map = new L.map('map', mapOptions);
 		var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 		map.addLayer(layer);
-		var marker = L.marker([11.001203750235218, -74.82311189174654],);
+		var marker = L.marker([<?php echo get_post_meta( get_the_ID(), 'latitud_map', true );?>, <?php echo get_post_meta( get_the_ID(), 'longitud_map', true );?>],);
 		marker.addTo(map);
 	</script>
 
@@ -66,19 +70,27 @@
 </div>
 
 	<footer id="colophon" class="site-footer">
+		<?php echo dynamic_sidebar( 'footer-information' ); ?>
 	
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tavomorean_iw' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'tavomorean_iw' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tavomorean_iw' ), 'tavomorean_iw', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+			<div class="credits">
+				<span class="company_name">HardRigth.io,  Inc. </span>
+				<ul class="foot-links">
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Privacy</a></li>
+				</ul>
+			</div>
+			<img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/foot_symbol.svg"/>
+			<ul class="foot-links_rrss">
+					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/Facebook.svg"/></a></li>
+					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.svg"/></a></li>
+					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/Youtube.svg"/></a></li>
+					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/Pinteres.svg"/></a></li>
+					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/In.svg"/></a></li>
+					
+					
+			</ul>
+			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

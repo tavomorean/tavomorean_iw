@@ -1766,3 +1766,155 @@ div#meta-info a:hover {
 nav.navigation.post-navigation {
 	display: none;
 }
+
+.video-container {
+	margin: 0 auto;
+	display: flex;
+	text-align: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.video-container ifram {
+	margin: 0 auto;
+}
+
+/*---- footer ----*/
+footer#colophon {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 20px;
+}
+
+footer#colophon ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/*---- media queries -----*/
+@media only screen and ( max-width: 996px) {
+	button.menu-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.scrolled-page button.menu-toggle {
+    color: black;
+}
+
+header.site-header .container {
+    padding: 0;
+}
+
+h1.hero_title {
+    text-align: center;
+}
+
+.get_ahead-left_box {
+    padding: 0px 15px;
+    width: 100%;
+}
+
+.get_ahead-right_box {
+    width: 100%;
+    padding: 0 15px;
+}
+
+p.get_ahead_paragraph {
+    text-align: center;
+}
+
+h2.get_ahead-title {
+    text-align: center;
+}
+
+.based_data-item_box {
+	width: 100%;
+	margin: 10px 0px;
+}
+.contact-form {
+	top: 0;
+	margin-top: 60px;
+}
+
+.wp-block-group.banner_info_home {
+	padding: 0px 15px;
+}
+h1.hero_title {
+	font-size: 47px;
+	line-height: 50px;
+}
+form#sw_filter {
+	flex-wrap: inherit;
+}
+.sw-container p {
+	font-size: 16px;
+	line-height: 24px;
+}
+p.banner-top-txt {
+	text-align: center;
+}
+.wp-block-buttons {
+	text-align: center;
+}
+.sw-container h2 {
+	font-size: 30px;
+	line-height: 50px;
+}
+div#based_on_data-wrap {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.research_post-card .research_post-thumb,  .research_post-card .research_post-info  {
+	width: 100%;
+	text-align: center;
+}
+h3.research_post-title {
+	font-size: 22px;
+	line-height: 30px;
+	margin-bottom: 56px;
+}
+.rs-container h2 {
+	font-size: 30px;
+	line-height: 50px;
+}
+.rs-container p {
+	font-size: 16px;
+	line-height: 24px;
+}
+.video-container {
+	padding: 0px 15px;
+}
+div#map {
+	display: none;
+}
+
+div#singlepost-banner {
+	padding: 0px 40px;
+}
+
+#singlepost-banner h1.hero_title {
+	font-size: 35px;
+	line-height: 45px;
+}
+
+.single-research main#primary article {
+	width: 100%;
+}
+
+div#meta-info {
+	width: 100% !important;
+}
+
+.single-research main#primary {
+	padding: 0px 15px;
+}
+
+.single-research span.posted-on {
+	text-align: center;
+	font-size: 20px;
+}
+}

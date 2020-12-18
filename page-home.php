@@ -117,8 +117,7 @@ get_header();
 		<div class="video-container">
 			<?php echo get_post_meta( get_the_ID(), 'see_us_video_link', true);?>
 		</div>
-		<span class="latt"><?php echo get_post_meta( get_the_ID(), 'latitud_map', true );?></span>
-		<span class="latt"><?php echo get_post_meta( get_the_ID(), 'longitud_map', true );?></span>
+	
 	</main><!-- #main -->
 
 <?php
