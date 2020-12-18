@@ -178,6 +178,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// add custom sidebar footer
+register_sidebar( array(
+	'name' => __( 'Footer information', 'tavomorean_iw' ),
+	'id' => 'footer-information',
+	'description' => __( 'Information for the footer', 'tavomorean_iw' ),
+	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	'after_widget' => '</aside>',
+	'before_title' => '<h3 class="widget-title">',
+	'after_title' => '</h3>',
+) );
+
+
 // Research Post Type
 function research_post_ype() {
 
@@ -232,3 +244,48 @@ function research_post_ype() {
 
 }
 add_action( 'init', 'research_post_ype', 0 );
+
+// Loop lastest research posts on homepage
+function latest_research_post() {
+	$del_recent_posts = new WP_Query();
+	$del_recent_posts->query('post_type=research','showposts=3');
+			while ($del_recent_posts->have_posts()) : $del_recent_posts->the_post(); ?>
+						<div class="research_post-card">
+						<div class="research_post-thumb">
+							<img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
+						</div>
+						<div class="research_post-info">
+							<a href="<?php the_permalink(); ?>"><h3 class="research_post-title"><?php the_title(); ?></h3></a>
+							<a href="<?php the_permalink(); ?>">Read report</a>
+						</div>
+					</div>
+			<?php endwhile;
+	wp_reset_postdata();
+}
+
+// Santinize emails
+
+// Hooks admin-post
+add_action( 'admin_post_nopriv_process_form', 'send_mail_data' );
+add_action( 'admin_post_process_form', 'send_mail_data' );
+
+// Funcion callback
+function send_mail_data() {
+
+	$name = sanitize_text_field($_POST['name']);
+	$email = sanitize_email($_POST['email']);
+	$message = sanitize_textarea_field($_POST['message']);
+
+	$adminmail = "tavomorean@gmail.com"; //email destino
+	$subject = 'Contact Form HardRight'; //asunto
+	$headers = "Reply-to: " . $name . " <" . $email . ">";
+
+	//Cuerpo del mensaje
+	$msg = "Nombre: " . $name . "\n";
+	$msg .= "E-mail: " . $email . "\n\n";
+	$msg .= "Mensaje: \n\n" . $message . "\n";
+
+	$sendmail = wp_mail( $adminmail, $subject, $msg, $headers);
+
+	wp_redirect( home_url()."?sent=".$sendmail );
+}

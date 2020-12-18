@@ -102,13 +102,23 @@ get_header();
 		<div class="rs-container">
 			<h2><?php echo get_post_meta( get_the_ID(), 'rs_head-title', true );?></h2>
 			<p><?php echo get_post_meta( get_the_ID(), 'rs_head-paragraph', true );?></p>
-
-			<div class="rs-feed">
-			</div>
 		</div>
-
+		<div class="rs-feed">
+			<?php //echo do_shortcode('[lastest-post]'); ?>
+			<?php echo latest_research_post(); ?>
+		</div>
 	</div>
 
+	<div id="see-us">
+		<div class="rs-container">
+			<h2><?php echo get_post_meta( get_the_ID(), 'see_us_title', true );?></h2>
+			<p><?php echo get_post_meta( get_the_ID(), 'see_us_paragraph', true );?></p>
+		</div>
+		<div class="video-container">
+			<?php echo get_post_meta( get_the_ID(), 'see_us_video_link', true);?>
+		</div>
+		<span class="latt"><?php echo get_post_meta( get_the_ID(), 'latitud_map', true );?></span>
+		<span class="latt"><?php echo get_post_meta( get_the_ID(), 'longitud_map', true );?></span>
 	</main><!-- #main -->
 
 <?php

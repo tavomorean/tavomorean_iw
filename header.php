@@ -30,8 +30,10 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 		<div class="site-branding">
-			<img class="hardright_brand" src="<?php echo get_template_directory_uri(); ?>/assets/img/hardright-brand.svg"> 
-			<img class="hardright_brand-scrolled" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_Fixed-Header.svg"> 
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img class="hardright_brand" src="<?php echo get_template_directory_uri(); ?>/assets/img/hardright-brand.svg"> 
+				<img class="hardright_brand-scrolled" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_Fixed-Header.svg"> 
+			</a>
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
