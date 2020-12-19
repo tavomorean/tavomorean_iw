@@ -2017,7 +2017,7 @@ div#meta-info {
 }
 header .main-navigation.toggled .menu-hardright-mainmenu-container {
 	position: fixed;
-	top: 0;
+	top: 60px;
 	background: white;
 	width: 100%;
 	right: 0;
