@@ -11,7 +11,7 @@
 
 ?>
 
-<div cvlass="detalle-item mapa">
+<div class="detalle-item mapa">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
 	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 	
@@ -32,7 +32,7 @@
 		var marker = L.marker([<?php echo get_post_meta( get_the_ID(), 'latitud_map', true );?>, <?php echo get_post_meta( get_the_ID(), 'longitud_map', true );?>],);
 		marker.addTo(map);
 	</script>
-
+<!-- END MAP -->
 	<div class="contact-form">
 		<div class="rs-container">
 			<h2>Contact Us</h2>
@@ -87,10 +87,7 @@
 					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/Youtube.svg"/></a></li>
 					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/Pinteres.svg"/></a></li>
 					<li><a href="#"><img class="foot-symbol" src="<?php echo get_template_directory_uri(); ?>/assets/img/In.svg"/></a></li>
-					
-					
-			</ul>
-			
+			</ul>		
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
