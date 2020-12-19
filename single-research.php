@@ -59,8 +59,10 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+  </main><!-- #main -->
+  <?php do_action('back_button'); ?>
 
+  <!-- <button id='go_back' class='btn button go_back' onclick='javascript:history.back()'>Back</button> -->
 <?php
 //get_sidebar();
 get_footer();

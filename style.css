@@ -1781,6 +1781,33 @@ nav.navigation.post-navigation {
 	margin: 10px auto;
 }
 
+button#my-back-button {
+	border: 1px solid #6161e8;
+	border-radius: 6px;
+	color: #fff;
+	background-color: #6161e8;
+	margin: 8px auto 20px auto;
+	line-height: 1.2;
+	text-align: center;
+	display: table;
+	padding: 12px 24px;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: 'Avenir LT Pro 45 Book';
+}
+
+button#my-back-button:hover {
+	border: 1px solid #9090e7;
+	border-radius: 6px;
+	color: white;
+	background-color: #9090e7;
+	cursor: pointer;
+}
+
+button#my-back-button:hover {
+	outline: 0;
+}
+
 /*---- footer ----*/
 footer#colophon {
 	display: flex;

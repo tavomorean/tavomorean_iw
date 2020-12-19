@@ -263,6 +263,17 @@ function latest_research_post() {
 	wp_reset_postdata();
 }
 
+// go back button
+add_action( 'back_button', 'iw_backbtn' );
+function iw_backbtn() {
+if ( wp_get_referer() ) {
+    $back_text = __( 'Back' );
+    $button    = "\n<button id='my-back-button' class='btn button my-back-button' onclick='javascript:history.back()'>$back_text</button>";
+    echo ( $button );
+}
+}
+
+
 // Santinize emails
 
 // Hooks admin-post
